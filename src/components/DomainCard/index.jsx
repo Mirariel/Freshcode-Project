@@ -1,9 +1,17 @@
-import React from 'react'
+import cards from './DomainCard.json';
 
-function DomainCard() {
+function DomainCard () {
   return (
-    <div>DomainCard</div>
-  )
+    <>
+      {cards.map(c => (
+        <li>
+          <img src={c.img} alt={c.title} />
+          <h4>c.title</h4>
+          <span>{c.price}</span>
+        </li>
+      ))}
+    </>
+  );
 }
 
-export default DomainCard
+export default DomainCard;
