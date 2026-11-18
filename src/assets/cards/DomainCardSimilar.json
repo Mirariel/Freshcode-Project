@@ -1,0 +1,102 @@
+[
+  {
+    "img": "imgForCard.webp",
+    "title": "Test.com",
+    "price": 4000000
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "Document.co",
+    "price": 195000
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "Wozot.com",
+    "price": 1499
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "Excel.com",
+    "price": 2500000
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "Thriverly.com",
+    "price": 3374
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "ButtonData.com",
+    "price": 2249
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "FAS.com",
+    "price": 1995000
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "Comic.io",
+    "price": 124995
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "Luresome.com",
+    "price": 2624
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "TouchPay.com",
+    "price": 995000
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "Galore.com",
+    "price": 460000
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "Shrink.io",
+    "price": 99995
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "Oasis.com",
+    "price": 2500000
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "Sample.com",
+    "price": "Make Offer"
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "Recover.io",
+    "price": 149999
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "Headshot.io",
+    "price": 22496
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "OMail.ai",
+    "price": 84995
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "GratFlix.com",
+    "price": 3750
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "ML.net",
+    "price": 274999
+  },
+  {
+    "img": "imgForCard.webp",
+    "title": "Nova.ai",
+    "price": 4900000
+  }
+]

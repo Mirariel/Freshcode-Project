@@ -1,4 +1,3 @@
-  import cards from './DomainCard.json';
   import styles from './DomainCard.module.sass';
 
   const images = import.meta.glob('../../assets/images/*.{webp,png,jpg,svg}', {
@@ -8,7 +7,7 @@
 
   const getImage = name => images[`../../assets/images/${name}`];
 
-  function DomainCard () {
+  function DomainCard ({cards}) {
     return (
       <>
         {cards.map(c => (
