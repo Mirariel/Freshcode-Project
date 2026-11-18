@@ -1,18 +1,29 @@
-import cards from './DomainCard.json';
-import styles from './DomainCard.module.sass';
+  import cards from './DomainCard.json';
+  import styles from './DomainCard.module.sass';
 
-function DomainCard () {
-  return (
-    <>
-      {cards.map(c => (
-        <li className={styles.domainCard}>
-          <img src={c.img} alt={c.title} />
-          <h4>c.title</h4>
-          <span>{c.price}</span>
-        </li>
-      ))}
-    </>
-  );
-}
+  const images = import.meta.glob('../../assets/images/*.{webp,png,jpg,svg}', {
+    eager: true,
+    import: 'default',
+  });
 
-export default DomainCard;
+  const getImage = name => images[`../../assets/images/${name}`];
+
+  function DomainCard () {
+    return (
+      <>
+        {cards.map(c => (
+          <li className={styles.domainCard}>
+            <div className={styles.imgContainer}>
+              <img className={styles.img} src={getImage(c.img)} alt={c.title} />
+            </div>
+            <div className={styles.cardInfo}>
+              <h4 className={styles.cardTitle}>{c.title}</h4>
+              <span className={styles.cardPrice}>${c.price}</span>
+            </div>
+          </li>
+        ))}
+      </>
+    );
+  }
+
+  export default DomainCard;
