@@ -1,7 +1,8 @@
 import { Formik, Form } from 'formik';
 import { connect } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import styles from './../LoginForm.module.sass';
+import styles from './LoginForm.module.sass';
 import Input from '../Input';
 import { LOGIN_VALIDATION_SCHEMA } from '../../../utils/validate/validationSchema';
 import { loginThunk } from '../../../store/slices/userSlice.js';
@@ -12,10 +13,13 @@ const initialValues = {
 };
 
 function LoginForm ({ login }) {
+  const navigate = useNavigate();
+
   const handleLoginingSubmit = async (values, formikBag) => {
     try {
       await login(values);
       formikBag.resetForm();
+      navigate('/');
     } catch (err) {
       formikBag.setStatus(err.message);
     }
@@ -63,7 +67,7 @@ function LoginForm ({ login }) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  login: values => dispatch(loginThunk(values).unwrap()),
+  login: values => dispatch(loginThunk(values)).unwrap(),
 });
 
 export default connect(null, mapDispatchToProps)(LoginForm);

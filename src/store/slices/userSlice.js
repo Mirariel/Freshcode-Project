@@ -8,10 +8,10 @@ export const loginThunk = createAsyncThunk(
   async ({ email, password }, thunkAPI) => {
     try {
       const { data } = await axiosInstance.get('/users', {
-        params: { email, password },
+        params: { email: email.trim() },
       });
 
-      const found = data[0];
+      const found = data.find(u => u.password === password);
       if (!found) {
         return thunkAPI.rejectWithValue({
           message: 'Невірний email або пароль',
@@ -39,8 +39,8 @@ const userSlice = createSlice({
   initialState,
   name: 'user',
   reducers: {
-    logout: ({ user }) => {
-      user = null;
+    logout: state => {
+      state.user = null;
       localStorage.removeItem('user');
     },
   },
@@ -60,7 +60,7 @@ const userSlice = createSlice({
   },
 });
 
-const {reducer, actions} = userSlice;
+const { reducer, actions } = userSlice;
 
-export const {logout} = actions; 
+export const { logout } = actions;
 export default reducer;

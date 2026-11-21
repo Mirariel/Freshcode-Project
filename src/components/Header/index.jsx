@@ -1,10 +1,16 @@
+import { Link } from 'react-router-dom';
+
 import logo from './../../assets/images/atom-logo.webp';
 import styles from './Header.module.sass';
+import { connect } from 'react-redux';
 
-function Header () {
+function Header ({user}) {
   return (
     <header className={styles.header}>
-      <img src={logo} className={styles.logo} />
+      <Link to='/'>
+        <img src={logo} className={styles.logo} />
+      </Link>
+
       <nav className={styles.headerNav}>
         <div className={styles.navLi}>Premium Domains</div>
         <div className={styles.navLi}>Register Domains</div>
@@ -14,7 +20,15 @@ function Header () {
       </nav>
 
       <div className={styles.iconContainer}>
-        <i class='fa-regular fa-user'></i>
+        {user ? (
+          <div>
+            Hi, {user.firstName} {user.lastName}
+          </div>
+        ) : (
+          <Link to='/login'>
+            <i className='fa-regular fa-user'></i>
+          </Link>
+        )}
         <i class='fa-solid fa-headphones'></i>
         <i class='fa-regular fa-heart'></i>
       </div>
@@ -22,4 +36,6 @@ function Header () {
   );
 }
 
-export default Header;
+const mapStateToProps = ({ user }) => ({ user: user.user });
+
+export default connect(mapStateToProps)(Header);
